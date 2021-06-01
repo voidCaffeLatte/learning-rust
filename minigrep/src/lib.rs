@@ -1,3 +1,6 @@
+//! # Minigrep Crate
+//! This is test crate
+
 use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
@@ -55,6 +58,14 @@ fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str>
         .collect()
 }
 
+// cargo doc --open
+/// Run minigrep command
+/// 
+/// # Example
+/// 
+/// ```
+/// let result = run(config);
+/// ```
 pub fn run(config: Config) -> Result<(), Box<Error>>
 {
     let mut f = File::open(config.filename)?;
